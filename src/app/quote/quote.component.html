@@ -1,17 +1,20 @@
-<h1>quotes-app</h1>
-<hr>
-<ul>
+<div class="container">
+<ul style="list-style-type:none;">
     <div *ngFor='let quote of quotes;let i =index'>
-        <li>{{quote.name}}</li>
-        <button (click)='toggleDetails(i)'>Toggle Details</button>
+      <div class="prof">
+        <li>"{{quote.name}}"</li>
+        <button (click)='toggleDetails(i)'class="btn btn-info">Show Details</button>
+        &nbsp;
         <app-quote-details *ngIf='quote.showDescription' [quote]='quote' (isComplete) = 'completeQuote($event,i)'></app-quote-details>
-        <button (click)="upvote(i)">
+        <button (click)="upvote(i)"class="btn btn-primary">
             upvote {{ quote.upvote }}</button>
-        
-          <button (click)="downvote(i)">
+            &nbsp;
+           <button (click)="downvote(i)"class="btn btn-primary">
             downvote{{ quote.downvote }}</button>
+            </div>
             
     
     </div>
 </ul>
 <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+</div>
