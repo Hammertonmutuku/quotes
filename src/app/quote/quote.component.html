@@ -1,4 +1,6 @@
 <div class="container">
+  <div class="row">
+    <div class="col md-6">
 <ul style="list-style-type:none;">
     <div *ngFor='let quote of quotes;let i =index'>
       <div class="prof">
@@ -16,5 +18,10 @@
     
     </div>
 </ul>
+</div>
+<div class="col md-6">
 <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
 </div>
+</div>
+</div>
+
