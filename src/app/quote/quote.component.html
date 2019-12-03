@@ -4,9 +4,10 @@
 <ul style="list-style-type:none;">
     <div *ngFor='let quote of quotes;let i =index'>
       <div class="prof">
-        <li>"{{quote.name}}"</li>
+        <li>"{{quote.description}}"</li>
         <button (click)='toggleDetails(i)'class="btn btn-info">Show Details</button>
         &nbsp;
+        
         <app-quote-details *ngIf='quote.showDescription' [quote]='quote' (isComplete) = 'completeQuote($event,i)'></app-quote-details>
         <button (click)="upvote(i)"class="btn btn-primary">
             upvote {{ quote.upvote }}</button>
